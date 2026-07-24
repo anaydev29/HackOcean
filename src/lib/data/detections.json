@@ -1,0 +1,139 @@
+[
+  {
+    "id": "det-0472",
+    "zoneId": "abyssal-sector-d12",
+    "type": "ghost_net",
+    "timestamp": "2026-07-24T06:10:00Z",
+    "summary": "Large derelict fishing net detected at 2,400m depth, entangling local fauna",
+    "sources": [
+      { "name": "Sonar", "matched": true, "note": "Dense net-shaped mass detected at 2,400m" },
+      { "name": "ROV Drone", "matched": true, "note": "Visual confirms mesh pattern, no movement" },
+      { "name": "Satellite", "matched": false, "note": "Not usable at this depth" }
+    ]
+  },
+  {
+    "id": "det-0473",
+    "zoneId": "abyssal-sector-d12",
+    "type": "dumping",
+    "timestamp": "2026-07-24T05:45:00Z",
+    "summary": "Chemical signature consistent with industrial waste discharge detected",
+    "sources": [
+      { "name": "IoT pH Sensor", "matched": true, "note": "pH dropped from 8.1 to 7.4 in 20 minutes" },
+      { "name": "Sonar", "matched": false, "note": "No solid debris pattern found" },
+      { "name": "Satellite", "matched": true, "note": "Surface plume visible in thermal band" }
+    ]
+  },
+  {
+    "id": "det-0474",
+    "zoneId": "hadal-trench-k7",
+    "type": "species_sighting",
+    "timestamp": "2026-07-24T05:30:00Z",
+    "summary": "Rare Snailfish colony observed at record depth of 6,200m",
+    "sources": [
+      { "name": "ROV Drone", "matched": true, "note": "Visual confirmation of 12+ individuals" },
+      { "name": "Acoustic Tag", "matched": true, "note": "Matches known Snailfish acoustic signature" }
+    ]
+  },
+  {
+    "id": "det-0475",
+    "zoneId": "hadal-trench-k7",
+    "type": "ghost_net",
+    "timestamp": "2026-07-24T04:50:00Z",
+    "summary": "Abandoned trawl net fragment found on trench slope at 5,800m",
+    "sources": [
+      { "name": "Sonar", "matched": true, "note": "Linear debris signature along slope" },
+      { "name": "ROV Drone", "matched": true, "note": "Confirmed synthetic material, partially buried" },
+      { "name": "Satellite", "matched": false, "note": "Depth exceeds satellite resolution" }
+    ]
+  },
+  {
+    "id": "det-0476",
+    "zoneId": "mesopelagic-reef-a3",
+    "type": "bleaching",
+    "timestamp": "2026-07-24T06:20:00Z",
+    "summary": "Coral bleaching detected in 15% of monitored reef area at 850m",
+    "sources": [
+      { "name": "IoT Temp Sensor", "matched": true, "note": "Water temp elevated 2.1°C above seasonal norm" },
+      { "name": "ROV Drone", "matched": true, "note": "White patches visible on staghorn coral" },
+      { "name": "Satellite", "matched": true, "note": "SST anomaly correlates with sensor data" }
+    ]
+  },
+  {
+    "id": "det-0477",
+    "zoneId": "mesopelagic-reef-a3",
+    "type": "species_sighting",
+    "timestamp": "2026-07-24T06:00:00Z",
+    "summary": "Manta Ray feeding aggregation observed — 8 individuals in survey area",
+    "sources": [
+      { "name": "ROV Drone", "matched": true, "note": "Visual count: 8 reef manta rays, feeding behavior" },
+      { "name": "Acoustic Tag", "matched": true, "note": "3 tagged individuals confirmed in area" }
+    ]
+  },
+  {
+    "id": "det-0478",
+    "zoneId": "bathyal-ridge-e9",
+    "type": "dumping",
+    "timestamp": "2026-07-24T04:15:00Z",
+    "summary": "Plastic debris field discovered near hydrothermal vent at 3,100m",
+    "sources": [
+      { "name": "ROV Drone", "matched": true, "note": "Plastic bags and bottles scattered across 200m²" },
+      { "name": "Sonar", "matched": true, "note": "Irregular debris pattern confirmed" },
+      { "name": "IoT Current Sensor", "matched": true, "note": "Debris drift consistent with surface dumping 48h ago" }
+    ]
+  },
+  {
+    "id": "det-0479",
+    "zoneId": "bathyal-ridge-e9",
+    "type": "bleaching",
+    "timestamp": "2026-07-24T03:50:00Z",
+    "summary": "Deep-water coral stress indicators elevated near vent system",
+    "sources": [
+      { "name": "IoT Temp Sensor", "matched": true, "note": "Vent-adjacent temps 3.8°C above baseline" },
+      { "name": "ROV Drone", "matched": true, "note": "Tissue recession visible on tube worm colonies" }
+    ]
+  },
+  {
+    "id": "det-0480",
+    "zoneId": "pelagic-zone-m15",
+    "type": "ghost_net",
+    "timestamp": "2026-07-24T06:40:00Z",
+    "summary": "Drifting gill net detected at 1,200m, potential entanglement hazard",
+    "sources": [
+      { "name": "Sonar", "matched": true, "note": "Net-like structure drifting at 3.2 knots" },
+      { "name": "Satellite", "matched": false, "note": "Cloud cover obscured visual confirmation" }
+    ]
+  },
+  {
+    "id": "det-0481",
+    "zoneId": "pelagic-zone-m15",
+    "type": "species_sighting",
+    "timestamp": "2026-07-24T06:25:00Z",
+    "summary": "Large Siphonophore colony observed during routine survey",
+    "sources": [
+      { "name": "ROV Drone", "matched": true, "note": "Colony estimated at 12m length" }
+    ]
+  },
+  {
+    "id": "det-0482",
+    "zoneId": "continental-shelf-c2",
+    "type": "species_sighting",
+    "timestamp": "2026-07-24T06:50:00Z",
+    "summary": "Coelacanth individual sighted at 450m — extremely rare encounter",
+    "sources": [
+      { "name": "ROV Drone", "matched": true, "note": "HD video captured, species confirmed by morphology" },
+      { "name": "Acoustic Tag", "matched": true, "note": "New individual, no prior tag record" },
+      { "name": "Sonar", "matched": true, "note": "Large solitary target consistent with Coelacanth profile" }
+    ]
+  },
+  {
+    "id": "det-0483",
+    "zoneId": "continental-shelf-c2",
+    "type": "dumping",
+    "timestamp": "2026-07-24T05:10:00Z",
+    "summary": "Microplastic concentration spike detected in water column at 300m",
+    "sources": [
+      { "name": "IoT Particulate Sensor", "matched": true, "note": "Particulate count 340% above monthly average" },
+      { "name": "Satellite", "matched": true, "note": "Surface debris field visible in optical band" }
+    ]
+  }
+]

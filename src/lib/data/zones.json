@@ -1,0 +1,68 @@
+[
+  {
+    "id": "abyssal-sector-d12",
+    "name": "Abyssal Sector D-12",
+    "depthMeters": 2400,
+    "coordinates": [-11.35, -149.60],
+    "pollutionLevel": "high",
+    "coralBleachingTrend": "rising",
+    "biodiversityTrend": "stable",
+    "lastUpdated": "2026-07-24T06:12:00Z",
+    "notableSpecies": ["Giant Isopod", "Dumbo Octopus", "Barreleye Fish"]
+  },
+  {
+    "id": "hadal-trench-k7",
+    "name": "Hadal Trench K-7",
+    "depthMeters": 6200,
+    "coordinates": [11.35, 142.20],
+    "pollutionLevel": "moderate",
+    "coralBleachingTrend": "stable",
+    "biodiversityTrend": "declining",
+    "lastUpdated": "2026-07-24T05:48:00Z",
+    "notableSpecies": ["Snailfish", "Amphipod Colonies", "Sea Cucumber"]
+  },
+  {
+    "id": "mesopelagic-reef-a3",
+    "name": "Mesopelagic Reef A-3",
+    "depthMeters": 850,
+    "coordinates": [-16.50, 145.78],
+    "pollutionLevel": "low",
+    "coralBleachingTrend": "declining",
+    "biodiversityTrend": "rising",
+    "lastUpdated": "2026-07-24T06:30:00Z",
+    "notableSpecies": ["Coral Grouper", "Manta Ray", "Sea Fan Coral"]
+  },
+  {
+    "id": "bathyal-ridge-e9",
+    "name": "Bathyal Ridge E-9",
+    "depthMeters": 3100,
+    "coordinates": [28.50, -88.40],
+    "pollutionLevel": "high",
+    "coralBleachingTrend": "rising",
+    "biodiversityTrend": "declining",
+    "lastUpdated": "2026-07-24T04:20:00Z",
+    "notableSpecies": ["Tube Worm Colony", "Yeti Crab", "Vent Shrimp"]
+  },
+  {
+    "id": "pelagic-zone-m15",
+    "name": "Pelagic Zone M-15",
+    "depthMeters": 1200,
+    "coordinates": [35.20, -30.50],
+    "pollutionLevel": "moderate",
+    "coralBleachingTrend": "stable",
+    "biodiversityTrend": "stable",
+    "lastUpdated": "2026-07-24T06:45:00Z",
+    "notableSpecies": ["Lanternfish", "Siphonophore", "Glass Squid"]
+  },
+  {
+    "id": "continental-shelf-c2",
+    "name": "Continental Shelf C-2",
+    "depthMeters": 450,
+    "coordinates": [-34.40, 18.50],
+    "pollutionLevel": "low",
+    "coralBleachingTrend": "stable",
+    "biodiversityTrend": "rising",
+    "lastUpdated": "2026-07-24T06:55:00Z",
+    "notableSpecies": ["Coelacanth", "Nautilus", "Deep-sea Anglerfish"]
+  }
+]
