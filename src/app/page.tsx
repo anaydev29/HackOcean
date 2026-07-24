@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getZones } from "@/lib/data/getZones";
 import { getDetections } from "@/lib/data/getDetections";
+import SwimmingFishWrapper from "@/components/hero/SwimmingFishWrapper";
 import {
   Anchor,
   ArrowRight,
@@ -14,14 +15,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "DeepSea Guardian — AI-Powered Ocean Monitoring",
+  title: "DeepSea Guardian — AI-Powered Deep Ocean Pollution & Biodiversity Monitoring",
   description:
-    "Real-time monitoring dashboard for deep-sea ecosystems. Track pollution, ghost fishing nets, coral bleaching, and biodiversity using multi-sensor fusion.",
+    "AI-powered real-time monitoring dashboard for deep-sea ecosystems. DeepSea Guardian fuses data from underwater drones, sonar arrays, satellite imagery, and IoT sensors to track ocean pollution, ghost fishing nets, coral bleaching, and marine biodiversity — with full detection explainability.",
+  keywords: [
+    "deep sea monitoring dashboard",
+    "ocean pollution AI",
+    "marine biodiversity tracker",
+    "coral bleaching early warning",
+    "ghost fishing net detection",
+    "underwater drone data fusion",
+    "explainable AI ocean",
+    "real-time ocean monitoring",
+    "HackOcean 2026",
+  ],
   openGraph: {
+    title: "DeepSea Guardian — AI-Powered Deep Ocean Monitoring",
+    description:
+      "Turning fragmented ocean data into one live, explainable command center. Monitor 6 deep-sea zones with real-time detection alerts and multi-sensor fusion.",
+    url: "https://deepsea-guardian.vercel.app",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "DeepSea Guardian — AI-Powered Ocean Monitoring",
     description:
-      "Turning fragmented ocean data into one live, explainable command center.",
-    type: "website",
+      "Real-time deep-sea ecosystem dashboard with explainable AI detection, zone health scoring, and multi-sensor fusion.",
+  },
+  alternates: {
+    canonical: "https://deepsea-guardian.vercel.app",
   },
 };
 
@@ -59,33 +81,40 @@ export default async function LandingPage() {
   ];
 
   return (
-    <div className="space-y-24 pb-20">
+    <div className="space-y-28 pb-24">
+      {/* Swimming fish background — full page, behind everything */}
+      <SwimmingFishWrapper />
+
       {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center pt-20 text-center sm:pt-32">
-        {/* Background glow */}
-        <div className="pointer-events-none absolute -top-20 h-[500px] w-[500px] rounded-full bg-teal/10 blur-[120px]" />
+      <section className="relative flex flex-col items-center justify-center pt-24 text-center sm:pt-36">
+        {/* Ambient floating orbs */}
+        <div className="ambient-orb -top-16 left-1/4 h-[400px] w-[400px] bg-teal/8" style={{ animationDelay: "0s" }} />
+        <div className="ambient-orb -top-10 right-1/4 h-[300px] w-[300px] bg-mint/6" style={{ animationDelay: "-7s" }} />
+        <div className="ambient-orb top-40 left-1/2 h-[250px] w-[250px] bg-sky-500/5" style={{ animationDelay: "-14s" }} />
 
         <div className="relative z-10 flex flex-col items-center">
-          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal to-mint shadow-xl shadow-teal/20">
-            <Anchor className="h-8 w-8 text-white" />
+          {/* Sonar icon with subtle glow */}
+          <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-teal/5 ring-1 ring-teal/20" style={{ boxShadow: "0 0 40px 8px rgba(28, 114, 147, 0.15)" }}>
+            <Anchor className="h-9 w-9 text-mint" />
           </div>
-          <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+
+          <h1 className="max-w-4xl text-5xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl">
             <span className="gradient-text">DeepSea Guardian</span>
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-foreground/60">
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground/55">
             AI-powered monitoring for deep-sea ecosystems. Turning fragmented
             ocean data into one live, explainable command center.
           </p>
 
-          {/* Stats */}
-          <div className="mt-8 flex items-center gap-6 text-sm">
+          {/* Stats row */}
+          <div className="mt-10 flex items-center gap-6 rounded-2xl glass-card px-6 py-3 text-sm">
             <div className="flex items-center gap-2 text-foreground/50">
               <Globe className="h-4 w-4 text-teal" />
               <span>
                 <strong className="font-extrabold text-foreground">{zones.length}</strong> Zones
               </span>
             </div>
-            <div className="h-4 w-px bg-foreground/20" />
+            <div className="h-4 w-px bg-foreground/15" />
             <div className="flex items-center gap-2 text-foreground/50">
               <Waves className="h-4 w-4 text-sky-400" />
               <span>
@@ -93,24 +122,24 @@ export default async function LandingPage() {
                 Detections
               </span>
             </div>
-            <div className="h-4 w-px bg-foreground/20" />
+            <div className="h-4 w-px bg-foreground/15" />
             <div className="flex items-center gap-2 text-foreground/50">
               <Radio className="h-4 w-4 text-emerald-400 pulse-live" />
               <span className="text-emerald-400 font-medium">Live</span>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/dashboard"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal to-mint px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal/25 transition-all hover:shadow-xl hover:shadow-teal/30 hover:-translate-y-0.5"
+              className="cta-glow inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal to-mint px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/25 transition-all duration-300 hover:shadow-xl hover:shadow-teal/35 hover:-translate-y-1"
             >
               Enter Command Center
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 rounded-xl border border-foreground/10 px-6 py-3 text-sm font-medium text-foreground/70 transition-all hover:bg-foreground/5"
+              className="inline-flex items-center gap-2 rounded-xl border border-foreground/10 px-7 py-3.5 text-sm font-medium text-foreground/70 transition-all duration-300 hover:bg-foreground/5 hover:border-foreground/20"
             >
               Learn More
             </Link>
@@ -118,22 +147,25 @@ export default async function LandingPage() {
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-lg" />
+
       {/* Features Grid */}
       <section className="mx-auto max-w-4xl">
-        <h2 className="mb-8 text-center text-xs font-semibold uppercase tracking-wider text-foreground/50">
+        <h2 className="mb-10 text-center text-xs font-semibold uppercase tracking-[0.2em] text-foreground/40">
           What Makes This Different
         </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           {features.map((f, i) => (
             <div
               key={i}
-              className="glass-card p-6 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5"
+              className="glass-card stat-card-accent card-shimmer p-7 transition-all duration-300 hover:border-teal/25 hover:shadow-lg hover:shadow-teal/8 hover:-translate-y-1"
             >
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-teal/10">
-                <f.icon className="h-5 w-5 text-teal" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-teal/15 to-mint/10 ring-1 ring-teal/15">
+                <f.icon className="h-5 w-5 text-mint" />
               </div>
-              <h3 className="text-sm font-semibold">{f.title}</h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-foreground/50">
+              <h3 className="text-sm font-bold tracking-tight">{f.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-foreground/45">
                 {f.description}
               </p>
             </div>
@@ -141,24 +173,33 @@ export default async function LandingPage() {
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-lg" />
+
       {/* Problem Statement */}
       <section className="mx-auto max-w-2xl text-center">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground/50">
-          HackOcean 2026 — PS03
-        </h2>
-        <p className="mt-4 text-lg font-medium text-foreground/80">
-          AI-Powered Deep Ocean Pollution & Biodiversity Monitoring
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-foreground/50">
-          Deep-sea ecosystems face mounting threats from pollution, ghost fishing
-          nets, coral bleaching, and biodiversity loss. DeepSea Guardian
-          simulates a real-time monitoring platform that fuses data from
-          underwater drones, sonar arrays, satellite imagery, and IoT sensors —
-          surfacing actionable insights through an explainable AI framework.
-        </p>
-        <p className="mt-4 text-xs text-foreground/30">
-          Team HRA — Anay Shivhare, Harsh Vardhan Rajput, Rashi Gupta
-        </p>
+        <div className="glass-card p-10 relative overflow-hidden">
+          {/* Subtle gradient border glow */}
+          <div className="absolute inset-0 rounded-[1rem] p-px bg-gradient-to-br from-teal/20 via-transparent to-mint/20 pointer-events-none" />
+          
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/60">
+            HackOcean 2026 — PS03
+          </h2>
+          <p className="mt-5 text-xl font-bold gradient-text">
+            AI-Powered Deep Ocean Pollution &amp; Biodiversity Monitoring
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-foreground/50">
+            Deep-sea ecosystems face mounting threats from pollution, ghost fishing
+            nets, coral bleaching, and biodiversity loss. DeepSea Guardian
+            simulates a real-time monitoring platform that fuses data from
+            underwater drones, sonar arrays, satellite imagery, and IoT sensors —
+            surfacing actionable insights through an explainable AI framework.
+          </p>
+          <div className="section-divider mx-auto mt-6 max-w-[160px]" />
+          <p className="mt-5 text-xs font-medium text-foreground/30">
+            Team HRA — Anay Shivhare · Harsh Vardhan Rajput · Rashi Gupta
+          </p>
+        </div>
       </section>
     </div>
   );

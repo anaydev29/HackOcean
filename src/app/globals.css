@@ -6,10 +6,10 @@
   --midnight: #21295C;
   --mint: #2EB093;
   --coral: #E06B3F;
-  --background: #0B1120;
+  --background: #060B18;
   --foreground: #E8ECF1;
-  --card-bg: rgba(15, 23, 42, 0.85);
-  --card-border: rgba(56, 189, 248, 0.12);
+  --card-bg: rgba(12, 20, 38, 0.88);
+  --card-border: rgba(56, 189, 248, 0.1);
 }
 
 @theme inline {
@@ -26,10 +26,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ─── Body with layered ambient gradient ─────────────────────── */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(28, 114, 147, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(46, 176, 147, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(6, 90, 130, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 /* ─── Scrollbar styling ──────────────────────────────────────── */
@@ -52,22 +66,22 @@ body {
 
 /* ─── Leaflet overrides ──────────────────────────────────────── */
 .leaflet-container {
-  background: #0B1120 !important;
+  background: #060B18 !important;
   border-radius: 0.75rem;
 }
 
 .leaflet-tile-pane {
-  /* CartoDB dark_matter tiles render dark natively */
+  /* CartoDB dark_all tiles render dark natively */
 }
 
 .leaflet-control-zoom a {
-  background: rgba(15, 23, 42, 0.9) !important;
+  background: rgba(12, 20, 38, 0.95) !important;
   color: #E8ECF1 !important;
   border-color: rgba(56, 189, 248, 0.2) !important;
 }
 
 .leaflet-control-attribution {
-  background: rgba(15, 23, 42, 0.7) !important;
+  background: rgba(12, 20, 38, 0.8) !important;
   color: rgba(232, 236, 241, 0.5) !important;
   font-size: 10px !important;
 }
@@ -78,24 +92,67 @@ body {
 
 /* ─── Glass card effect ──────────────────────────────────────── */
 .glass-card {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(56, 189, 248, 0.12);
-  border-radius: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 20, 38, 0.92) 0%,
+    rgba(15, 25, 45, 0.85) 100%
+  );
+  backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  border-radius: 1rem;
+  box-shadow:
+    0 1px 0 0 rgba(56, 189, 248, 0.04) inset,
+    0 4px 20px -4px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.15);
 }
 
 /* ─── Gradient text ──────────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #38bdf8, #2EB093);
+  background: linear-gradient(135deg, #38bdf8 0%, #2EB093 50%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* ─── Glow badge ─────────────────────────────────────────────── */
+.glow-badge {
+  box-shadow: 0 0 20px 3px currentColor;
+}
+
+/* ─── Shimmer line for sections ──────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.2) 30%,
+    rgba(46, 176, 147, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+/* ─── Ambient floating orb ───────────────────────────────────── */
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: float-orb 20s ease-in-out infinite;
+}
+
 /* ─── Pulse animation for live indicators ────────────────────── */
 @keyframes pulse-glow {
   0%, 100% { opacity: 1; box-shadow: 0 0 4px currentColor; }
-  50% { opacity: 0.5; box-shadow: 0 0 12px currentColor; }
+  50% { opacity: 0.5; box-shadow: 0 0 14px currentColor; }
 }
 
 .pulse-live {
@@ -110,4 +167,63 @@ body {
 
 .animate-ticker {
   animation: ticker-scroll 20s linear infinite;
+}
+
+/* ─── Stat card gradient accent bar ──────────────────────────── */
+.stat-card-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1C7293, #2EB093, #38bdf8);
+  opacity: 0.6;
+}
+
+/* ─── CTA button glow ────────────────────────────────────────── */
+.cta-glow {
+  position: relative;
+}
+
+.cta-glow::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #1C7293, #2EB093);
+  opacity: 0;
+  z-index: -1;
+  filter: blur(12px);
+  transition: opacity 0.3s ease;
+}
+
+.cta-glow:hover::after {
+  opacity: 0.5;
+}
+
+/* ─── Card inner highlight (top-left shimmer) ────────────────── */
+.card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(56, 189, 248, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
 }

@@ -11,9 +11,26 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About & Methodology | DeepSea Guardian",
+  title: "About & Methodology — Scoring Formulas, Data Sources & Design Rationale",
   description:
-    "How DeepSea Guardian simulates deep-sea monitoring — data methodology, scoring formulas, and design rationale.",
+    "Learn how DeepSea Guardian simulates deep-sea monitoring. Explore our deterministic Zone Health Index formula (pollution 40%, bleaching 30%, biodiversity 30%), detection confidence scoring, data methodology grounded in NOAA Marine Debris Program and GBIF biodiversity datasets, and the tech stack powering the platform.",
+  keywords: [
+    "zone health index formula",
+    "detection confidence scoring",
+    "NOAA marine debris",
+    "GBIF biodiversity data",
+    "deep sea monitoring methodology",
+    "ocean AI scoring",
+  ],
+  openGraph: {
+    title: "About & Methodology — DeepSea Guardian",
+    description:
+      "Data methodology, deterministic scoring formulas, tech stack, and design rationale behind the deep-sea monitoring simulation.",
+    url: "https://deepsea-guardian.vercel.app/about",
+  },
+  alternates: {
+    canonical: "https://deepsea-guardian.vercel.app/about",
+  },
 };
 
 export default function AboutPage() {

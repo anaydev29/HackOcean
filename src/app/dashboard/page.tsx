@@ -7,9 +7,26 @@ import RiskMapWrapper from "@/components/map/RiskMapWrapper";
 import { Map, Shield, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Command Center | DeepSea Guardian",
+  title: "Command Center — Real-Time Deep Ocean Monitoring Dashboard",
   description:
-    "Real-time deep-sea ecosystem monitoring dashboard — pollution, biodiversity, and zone health at a glance.",
+    "Live command center for deep-sea ecosystem monitoring. View zone health indices, interactive risk maps, real-time detection alerts with explainability panels, and multi-sensor fusion data across 6 monitored deep-ocean zones.",
+  keywords: [
+    "ocean command center",
+    "zone health index",
+    "real-time detection feed",
+    "interactive risk map",
+    "deep sea dashboard",
+    "marine monitoring",
+  ],
+  openGraph: {
+    title: "Command Center — DeepSea Guardian",
+    description:
+      "Live monitoring dashboard with zone health scores, interactive risk map, and real-time detection alerts across deep-sea ecosystems.",
+    url: "https://deepsea-guardian.vercel.app/dashboard",
+  },
+  alternates: {
+    canonical: "https://deepsea-guardian.vercel.app/dashboard",
+  },
 };
 
 export default async function DashboardPage() {

@@ -32,9 +32,51 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2 text-lg font-bold tracking-tight"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-teal to-mint">
-            <Anchor className="h-4 w-4 text-white" />
-          </div>
+          <svg
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0"
+            style={{ filter: "drop-shadow(0 0 6px rgba(46, 176, 147, 0.5))" }}
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="sonarGrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#1C7293" />
+                <stop offset="100%" stopColor="#2EB093" />
+              </linearGradient>
+            </defs>
+            {/* Center dot */}
+            <circle cx="17" cy="17" r="3" fill="url(#sonarGrad)" />
+            {/* Inner arc */}
+            <path
+              d="M10.5 17a6.5 6.5 0 0 1 6.5-6.5"
+              stroke="url(#sonarGrad)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              fill="none"
+            />
+            {/* Middle arc */}
+            <path
+              d="M7 17a10 10 0 0 1 10-10"
+              stroke="url(#sonarGrad)"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.7"
+            />
+            {/* Outer arc */}
+            <path
+              d="M3.5 17A13.5 13.5 0 0 1 17 3.5"
+              stroke="url(#sonarGrad)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.4"
+            />
+          </svg>
           <span className="gradient-text">DeepSea Guardian</span>
         </Link>
 
