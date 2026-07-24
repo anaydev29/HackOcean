@@ -28,30 +28,30 @@ export default async function DashboardPage() {
     <div className="space-y-6">
       {/* Stats Row */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-        <div className="glass-card flex items-center gap-3 p-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal/15">
+        <div className="glass-card flex items-center gap-3.5 p-4 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal/15">
             <Shield className="h-5 w-5 text-teal" />
           </div>
           <div>
-            <p className="text-2xl font-bold">{avgHealth}</p>
+            <p className="text-3xl font-extrabold tracking-tight">{avgHealth}</p>
             <p className="text-xs text-foreground/50">Avg. Zone Health</p>
           </div>
         </div>
-        <div className="glass-card flex items-center gap-3 p-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-coral/15">
+        <div className="glass-card flex items-center gap-3.5 p-4 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-coral/15">
             <Activity className="h-5 w-5 text-coral" />
           </div>
           <div>
-            <p className="text-2xl font-bold">{criticalZones}</p>
+            <p className="text-3xl font-extrabold tracking-tight">{criticalZones}</p>
             <p className="text-xs text-foreground/50">Zones at Risk</p>
           </div>
         </div>
-        <div className="glass-card flex items-center gap-3 p-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/15">
+        <div className="glass-card flex items-center gap-3.5 p-4 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
             <Map className="h-5 w-5 text-amber-400" />
           </div>
           <div>
-            <p className="text-2xl font-bold">{highConfDetections}</p>
+            <p className="text-3xl font-extrabold tracking-tight">{highConfDetections}</p>
             <p className="text-xs text-foreground/50">High-Conf Detections</p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default async function DashboardPage() {
 
       {/* Zone Health Cards Grid */}
       <div>
-        <h2 className="mb-3 text-sm font-semibold text-foreground/70">
+        <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-foreground/50">
           Monitoring Zones
         </h2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">

@@ -57,7 +57,7 @@ body {
 }
 
 .leaflet-tile-pane {
-  filter: brightness(0.6) saturate(1.4) hue-rotate(180deg) invert(1);
+  /* CartoDB dark_matter tiles render dark natively */
 }
 
 .leaflet-control-zoom a {

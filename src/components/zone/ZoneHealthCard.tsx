@@ -36,6 +36,15 @@ export default function ZoneHealthCard({ zone, index }: ZoneHealthCardProps) {
     return "text-amber-400";
   };
 
+  const glowColor =
+    zone.healthIndex >= 75
+      ? "rgba(34, 197, 94, 0.4)"
+      : zone.healthIndex >= 50
+      ? "rgba(234, 179, 8, 0.4)"
+      : zone.healthIndex >= 25
+      ? "rgba(249, 115, 22, 0.4)"
+      : "rgba(239, 68, 68, 0.4)";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -44,7 +53,7 @@ export default function ZoneHealthCard({ zone, index }: ZoneHealthCardProps) {
     >
       <Link
         href={`/dashboard/zone/${zone.id}`}
-        className="group block glass-card p-4 transition-all duration-200 hover:border-sky-400/30 hover:shadow-lg hover:shadow-sky-500/5"
+        className="group block glass-card p-4 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5"
         aria-label={`View details for ${zone.name}`}
       >
         {/* Header */}
@@ -60,7 +69,10 @@ export default function ZoneHealthCard({ zone, index }: ZoneHealthCardProps) {
 
         {/* Health Score */}
         <div className="mb-3 flex items-center gap-3">
-          <div className="relative flex h-12 w-12 items-center justify-center">
+          <div
+            className="relative flex h-12 w-12 items-center justify-center rounded-full"
+            style={{ boxShadow: `0 0 18px 2px ${glowColor}` }}
+          >
             <svg className="h-12 w-12 -rotate-90" viewBox="0 0 48 48">
               <circle
                 cx="24"
@@ -83,13 +95,13 @@ export default function ZoneHealthCard({ zone, index }: ZoneHealthCardProps) {
                 className={status.colorClass}
               />
             </svg>
-            <span className="absolute text-sm font-bold">{zone.healthIndex}</span>
+            <span className="absolute text-sm font-extrabold">{zone.healthIndex}</span>
           </div>
           <div>
-            <span className={`text-xs font-semibold uppercase tracking-wide ${status.colorClass}`}>
+            <span className={`text-xs font-bold uppercase tracking-wider ${status.colorClass}`}>
               {status.label}
             </span>
-            <p className="text-xs text-foreground/50">Zone Health Index</p>
+            <p className="text-[11px] text-foreground/50">Zone Health Index</p>
           </div>
         </div>
 

@@ -43,6 +43,15 @@ export default async function ZoneDetailPage({ params }: PageProps) {
 
   const status = healthStatus(zone.healthIndex);
 
+  const glowColor =
+    zone.healthIndex >= 75
+      ? "rgba(34, 197, 94, 0.4)"
+      : zone.healthIndex >= 50
+      ? "rgba(234, 179, 8, 0.4)"
+      : zone.healthIndex >= 25
+      ? "rgba(249, 115, 22, 0.4)"
+      : "rgba(239, 68, 68, 0.4)";
+
   return (
     <div className="space-y-6">
       {/* Back link */}
@@ -70,7 +79,10 @@ export default async function ZoneDetailPage({ params }: PageProps) {
 
           {/* Health Score */}
           <div className="flex items-center gap-4">
-            <div className="relative flex h-20 w-20 items-center justify-center">
+            <div
+              className="relative flex h-20 w-20 items-center justify-center rounded-full"
+              style={{ boxShadow: `0 0 24px 4px ${glowColor}` }}
+            >
               <svg className="h-20 w-20 -rotate-90" viewBox="0 0 80 80">
                 <circle
                   cx="40"
@@ -93,10 +105,10 @@ export default async function ZoneDetailPage({ params }: PageProps) {
                   className={status.colorClass}
                 />
               </svg>
-              <span className="absolute text-xl font-bold">{zone.healthIndex}</span>
+              <span className="absolute text-2xl font-extrabold">{zone.healthIndex}</span>
             </div>
             <div>
-              <span className={`text-lg font-bold ${status.colorClass}`}>
+              <span className={`text-lg font-bold uppercase tracking-wider ${status.colorClass}`}>
                 {status.label}
               </span>
               <p className="text-xs text-foreground/50">Zone Health Index</p>

@@ -69,7 +69,7 @@ export default async function LandingPage() {
           <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal to-mint shadow-xl shadow-teal/20">
             <Anchor className="h-8 w-8 text-white" />
           </div>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             <span className="gradient-text">DeepSea Guardian</span>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-foreground/60">
@@ -82,14 +82,14 @@ export default async function LandingPage() {
             <div className="flex items-center gap-2 text-foreground/50">
               <Globe className="h-4 w-4 text-teal" />
               <span>
-                <strong className="text-foreground">{zones.length}</strong> Zones
+                <strong className="font-extrabold text-foreground">{zones.length}</strong> Zones
               </span>
             </div>
             <div className="h-4 w-px bg-foreground/20" />
             <div className="flex items-center gap-2 text-foreground/50">
               <Waves className="h-4 w-4 text-sky-400" />
               <span>
-                <strong className="text-foreground">{detections.length}</strong>{" "}
+                <strong className="font-extrabold text-foreground">{detections.length}</strong>{" "}
                 Detections
               </span>
             </div>
@@ -120,12 +120,15 @@ export default async function LandingPage() {
 
       {/* Features Grid */}
       <section className="mx-auto max-w-4xl">
-        <h2 className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-foreground/40">
+        <h2 className="mb-8 text-center text-xs font-semibold uppercase tracking-wider text-foreground/50">
           What Makes This Different
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {features.map((f, i) => (
-            <div key={i} className="glass-card p-6 transition-all hover:border-sky-400/20">
+            <div
+              key={i}
+              className="glass-card p-6 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5"
+            >
               <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-teal/10">
                 <f.icon className="h-5 w-5 text-teal" />
               </div>
@@ -140,7 +143,7 @@ export default async function LandingPage() {
 
       {/* Problem Statement */}
       <section className="mx-auto max-w-2xl text-center">
-        <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground/50">
           HackOcean 2026 — PS03
         </h2>
         <p className="mt-4 text-lg font-medium text-foreground/80">

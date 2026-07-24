@@ -38,8 +38,8 @@ export default function RiskMap({ zones }: RiskMapProps) {
 
   return (
     <MapContainer
-      center={[5, 30]}
-      zoom={2}
+      center={[15, -40]}
+      zoom={3}
       minZoom={2}
       maxZoom={8}
       className="h-full w-full rounded-xl"

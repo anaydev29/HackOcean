@@ -64,6 +64,6 @@ export function healthStatus(index: number): {
   if (index >= 50)
     return { label: "Moderate", colorClass: "text-amber-400", bgClass: "bg-amber-500" };
   if (index >= 25)
-    return { label: "At Risk", colorClass: "text-orange-400", bgClass: "bg-orange-500" };
-  return { label: "Critical", colorClass: "text-red-400", bgClass: "bg-red-500" };
+    return { label: "At Risk", colorClass: "text-orange-500", bgClass: "bg-orange-500" };
+  return { label: "Critical", colorClass: "text-red-500", bgClass: "bg-red-500" };
 }

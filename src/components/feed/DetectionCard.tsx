@@ -38,10 +38,10 @@ export default function DetectionCard({ detection, index }: DetectionCardProps) 
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.2, delay: index * 0.03 }}
-      className="glass-card p-3"
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25, delay: index * 0.03 }}
+      className="glass-card p-3 transition-all duration-200 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 hover:-translate-y-0.5"
       role="article"
       aria-label={`${detectionTypeLabel(detection.type)} detection with ${detection.confidence}% confidence`}
     >
@@ -59,7 +59,7 @@ export default function DetectionCard({ detection, index }: DetectionCardProps) 
                 {detectionTypeLabel(detection.type)}
               </span>
               <span
-                className={`rounded-full px-1.5 py-0.5 text-[10px] font-bold ${conf.colorClass} bg-foreground/5`}
+                className={`rounded-full px-1.5 py-0.5 text-[10px] font-extrabold ${conf.colorClass} bg-foreground/5`}
               >
                 {detection.confidence}%
               </span>
